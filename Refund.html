@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund &amp; Cancellation Policy – WebRox Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="fevicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="fevicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fevicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fevicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="fevicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="fevicon/android-chrome-512x512.png">
+    <link rel="manifest" href="fevicon/site.webmanifest">
+<link rel="stylesheet" href="style.css" type="text/css">
+<style>
+  .policy-hero {
+    padding: 160px 5% 80px;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .policy-hero::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26,155,232,0.10) 0%, transparent 70%);
+  }
+  .policy-hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--blue) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--blue) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .policy-hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+  .policy-hero .section-tag { margin-bottom: 20px; }
+  .policy-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    letter-spacing: 3px; line-height: 0.95;
+    margin-bottom: 20px;
+  }
+  .policy-hero h1 span { color: var(--blue); }
+  .policy-hero .hero-meta {
+    font-size: 14px; color: var(--gray);
+    margin-top: 20px; letter-spacing: 1px;
+  }
+  .policy-hero .hero-meta strong { color: var(--blue); font-weight: 600; }
+
+  .policy-body { background: var(--dark2); padding: 0 5% 100px; }
+  .policy-wrap { max-width: 900px; margin: 0 auto; padding-top: 60px; }
+
+  .toc {
+    background: var(--dark3);
+    border: 1px solid rgba(26,155,232,0.2);
+    border-radius: 16px; padding: 32px 36px; margin-bottom: 60px;
+  }
+  .toc-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 2px; color: var(--blue);
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .toc-title::before { content: '§'; font-size: 20px; opacity: 0.6; }
+  .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
+  .toc-list li a {
+    color: var(--gray-light); text-decoration: none; font-size: 13px;
+    font-weight: 400; transition: color .2s;
+    display: flex; align-items: center; gap: 8px; padding: 4px 0;
+  }
+  .toc-list li a::before { content: '→'; color: var(--blue); font-size: 11px; flex-shrink: 0; }
+  .toc-list li a:hover { color: var(--blue); }
+
+  .policy-section {
+    margin-bottom: 52px; padding-bottom: 52px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .policy-section:last-child { border-bottom: none; }
+  .policy-section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+  .section-num {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(26,155,232,0.1); border: 1px solid rgba(26,155,232,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--blue); flex-shrink: 0;
+  }
+  .policy-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 3vw, 30px); letter-spacing: 2px; line-height: 1; color: var(--white);
+  }
+  .policy-section p {
+    font-size: 15px; color: rgba(255,255,255,0.65);
+    line-height: 1.85; font-weight: 300; margin-bottom: 14px;
+  }
+  .policy-section p:last-child { margin-bottom: 0; }
+  .policy-section ul { list-style: none; margin: 12px 0; padding: 0; }
+  .policy-section ul li {
+    font-size: 15px; color: rgba(255,255,255,0.65);
+    line-height: 1.8; font-weight: 300;
+    padding: 6px 0 6px 22px; position: relative;
+  }
+  .policy-section ul li::before {
+    content: '▸'; color: var(--blue); position: absolute; left: 0; font-size: 12px; top: 8px;
+  }
+  .policy-highlight {
+    background: rgba(26,155,232,0.07); border: 1px solid rgba(26,155,232,0.2);
+    border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0;
+    padding: 18px 22px; margin: 20px 0;
+    font-size: 14px; color: var(--gray-light); line-height: 1.7; font-weight: 400;
+  }
+  .policy-highlight strong { color: var(--blue); font-weight: 700; }
+  .policy-warning {
+    background: rgba(255,80,80,0.06); border: 1px solid rgba(255,80,80,0.2);
+    border-left: 3px solid #f87171; border-radius: 0 10px 10px 0;
+    padding: 18px 22px; margin: 20px 0;
+    font-size: 14px; color: var(--gray-light); line-height: 1.7; font-weight: 400;
+  }
+  .policy-warning strong { color: #f87171; font-weight: 700; }
+  .policy-info {
+    background: rgba(255,180,0,0.06); border: 1px solid rgba(255,180,0,0.2);
+    border-left: 3px solid #fbbf24; border-radius: 0 10px 10px 0;
+    padding: 18px 22px; margin: 20px 0;
+    font-size: 14px; color: var(--gray-light); line-height: 1.7; font-weight: 400;
+  }
+  .policy-info strong { color: #fbbf24; font-weight: 700; }
+  .last-updated {
+    background: var(--dark3); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px; padding: 20px 28px;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 48px; font-size: 13px; color: var(--gray);
+  }
+  .last-updated-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(26,155,232,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .last-updated strong { color: var(--gray-light); font-size: 14px; display: block; margin-bottom: 2px; }
+  .policy-contact {
+    background: linear-gradient(135deg, rgba(26,155,232,0.12), rgba(13,126,196,0.05));
+    border: 1px solid rgba(26,155,232,0.2); border-radius: 20px;
+    padding: 48px 40px; text-align: center; margin-top: 60px;
+  }
+  .policy-contact h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px; letter-spacing: 2px; margin-bottom: 12px;
+  }
+  .policy-contact p { font-size: 15px; color: var(--gray); margin-bottom: 28px; }
+  .breadcrumb {
+    max-width: 900px; margin: 0 auto; padding: 28px 0 0;
+    display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--gray);
+  }
+  .breadcrumb a { color: var(--gray); text-decoration: none; transition: color .2s; }
+  .breadcrumb a:hover { color: var(--blue); }
+
+  /* Summary cards */
+  .refund-summary {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 28px 0;
+  }
+  .summary-card {
+    border-radius: 12px; padding: 22px 20px; text-align: center;
+  }
+  .summary-card.no {
+    background: rgba(248, 113, 113, 0.07);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+  }
+  .summary-card.yes {
+    background: rgba(74, 222, 128, 0.07);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+  }
+  .summary-card.maybe {
+    background: rgba(251, 191, 36, 0.07);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+  .summary-icon { font-size: 28px; margin-bottom: 10px; }
+  .summary-card h4 { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .summary-card.no h4 { color: #f87171; }
+  .summary-card.yes h4 { color: #4ade80; }
+  .summary-card.maybe h4 { color: #fbbf24; }
+  .summary-card p { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .toc-list { grid-template-columns: 1fr; }
+    .policy-contact { padding: 32px 20px; }
+    .refund-summary { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <img src="images/logo.jpeg" alt="WebRox Studio Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>WebRox Studio</h2>
+        <p>Where Ideas Go Digital</p>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="index.html#contact" class="nav-cta">Get a Quote</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html#services" onclick="closeMobile()">Services</a>
+  <a href="index.html#industries" onclick="closeMobile()">Industries</a>
+  <a href="index.html#portfolio" onclick="closeMobile()">Portfolio</a>
+  <a href="index.html#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="index.html#clients" onclick="closeMobile()">Clients</a>
+  <a href="index.html#contact" onclick="closeMobile()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="policy-hero">
+  <div class="policy-hero-grid"></div>
+  <div class="policy-hero-inner">
+    <div class="section-tag reveal">Legal Document</div>
+    <h1 class="reveal">REFUND &amp; <span>CANCELLATION</span></h1>
+    <p class="hero-meta reveal">Understand our payment, cancellation, and refund terms before engaging our services.<br>
+    <strong>Webrox Studio</strong> · Governed by the laws of India</p>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="policy-body">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span style="color:var(--gray-light)">Refund &amp; Cancellation Policy</span>
+  </div>
+
+  <div class="policy-wrap">
+
+    <div class="last-updated reveal">
+      <div class="last-updated-icon">💳</div>
+      <div>
+        <strong>Payment &amp; Refund Overview</strong>
+        By engaging the services of Webrox Studio, the Client acknowledges that they have read, understood, and agreed to this Refund and Cancellation Policy.
+      </div>
+    </div>
+
+    <!-- Quick Summary Cards -->
+    <div class="refund-summary reveal">
+      <div class="summary-card no">
+        <div class="summary-icon">🚫</div>
+        <h4>Advance Payment</h4>
+        <p>Strictly non-refundable once project is confirmed and work begins.</p>
+      </div>
+      <div class="summary-card no">
+        <div class="summary-icon">❌</div>
+        <h4>Third-Party Costs</h4>
+        <p>Domain, hosting, plugins and ad budgets are non-refundable.</p>
+      </div>
+      <div class="summary-card maybe">
+        <div class="summary-icon">⚖️</div>
+        <h4>Exceptional Cases</h4>
+        <p>Partial refunds may be considered at Webrox Studio's sole discretion.</p>
+      </div>
+    </div>
+
+    <div class="toc reveal">
+      <div class="toc-title">Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Introduction</a></li>
+        <li><a href="#s2">2. Advance Payment Requirement</a></li>
+        <li><a href="#s3">3. Non-Refundable Advance Payment</a></li>
+        <li><a href="#s4">4. Project Cancellation by Client</a></li>
+        <li><a href="#s5">5. Cancellation by the Company</a></li>
+        <li><a href="#s6">6. Refund Eligibility</a></li>
+        <li><a href="#s7">7. Digital Service Nature</a></li>
+        <li><a href="#s8">8. Third-Party Service Costs</a></li>
+        <li><a href="#s9">9. Dispute Resolution</a></li>
+        <li><a href="#s10">10. Policy Updates</a></li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="policy-section reveal" id="s1">
+      <div class="policy-section-head">
+        <div class="section-num">01</div>
+        <h2>Introduction</h2>
+      </div>
+      <p>This Refund and Cancellation Policy governs all payments made to Webrox Studio for digital services including, but not limited to, website development, mobile application development, digital marketing, website maintenance, and related technical services.</p>
+      <p>By engaging the services of Webrox Studio, the Client acknowledges that they have read, understood, and agreed to this Refund and Cancellation Policy.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="policy-section reveal" id="s2">
+      <div class="policy-section-head">
+        <div class="section-num">02</div>
+        <h2>Advance Payment Requirement</h2>
+      </div>
+      <p>To initiate any project or service engagement, the Client is required to pay an advance payment as specified in the project proposal, quotation, or service agreement.</p>
+      <div class="policy-highlight">
+        <strong>Purpose:</strong> This advance payment secures project scheduling, resource allocation, and commencement of work by the Company.
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="policy-section reveal" id="s3">
+      <div class="policy-section-head">
+        <div class="section-num">03</div>
+        <h2>Non-Refundable Advance Payment</h2>
+      </div>
+      <div class="policy-warning">
+        <strong>🚫 Strictly Non-Refundable:</strong> All advance payments made to Webrox Studio are strictly non-refundable under any circumstances.
+      </div>
+      <p>Once the advance payment has been received and the project has been confirmed, the Company will begin allocating resources, planning, and development activities. Therefore, such payments shall not be eligible for refund under any circumstances.</p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="policy-section reveal" id="s4">
+      <div class="policy-section-head">
+        <div class="section-num">04</div>
+        <h2>Project Cancellation by Client</h2>
+      </div>
+      <p>If the Client chooses to cancel the project after signing the agreement or after work has commenced:</p>
+      <ul>
+        <li>The advance payment shall remain non-refundable.</li>
+        <li>The Client may be required to pay for the work completed up to the date of cancellation.</li>
+        <li>Any costs incurred by the Company for third-party services, tools, hosting, or licenses shall also be payable by the Client.</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="policy-section reveal" id="s5">
+      <div class="policy-section-head">
+        <div class="section-num">05</div>
+        <h2>Cancellation by the Company</h2>
+      </div>
+      <p>Webrox Studio reserves the right to terminate or suspend a project or service engagement under the following circumstances:</p>
+      <ul>
+        <li>Failure of the Client to make required payments within the agreed timeline</li>
+        <li>Repeated delays in providing necessary project information or approvals</li>
+        <li>Engagement in illegal, unethical, or abusive conduct</li>
+        <li>Violation of contractual terms or applicable laws</li>
+      </ul>
+      <div class="policy-warning">
+        <strong>⚠ Please Note:</strong> In such cases, any payments already made shall remain non-refundable.
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="policy-section reveal" id="s6">
+      <div class="policy-section-head">
+        <div class="section-num">06</div>
+        <h2>Refund Eligibility</h2>
+      </div>
+      <p>Refunds may only be considered under exceptional circumstances at the sole discretion of Webrox Studio, such as:</p>
+      <ul>
+        <li>When the Company determines that it is unable to deliver the agreed services due to internal limitations.</li>
+      </ul>
+      <div class="policy-info">
+        <strong>💡 If Applicable:</strong> In such cases, any refund issued shall be partial and proportionate to the work not yet performed, and administrative or operational costs may be deducted.
+      </div>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="policy-section reveal" id="s7">
+      <div class="policy-section-head">
+        <div class="section-num">07</div>
+        <h2>Digital Service Nature</h2>
+      </div>
+      <p>Due to the nature of digital services — including design work, software development, technical consulting, and digital marketing — services once initiated are considered non-returnable and non-refundable.</p>
+      <div class="policy-highlight">
+        <strong>Why?</strong> Time, expertise, and resources invested in digital services cannot be reversed once work has commenced. Unlike physical goods, digital work represents irreversible effort.
+      </div>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="policy-section reveal" id="s8">
+      <div class="policy-section-head">
+        <div class="section-num">08</div>
+        <h2>Third-Party Service Costs</h2>
+      </div>
+      <p>Any third-party costs paid on behalf of the Client including, but not limited to:</p>
+      <ul>
+        <li>Domain registrations</li>
+        <li>Web hosting services</li>
+        <li>Software licenses</li>
+        <li>Plugins, APIs, or integrations</li>
+        <li>Advertising platform budgets</li>
+      </ul>
+      <p>…are non-refundable and remain subject to the policies of the respective third-party providers.</p>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="policy-section reveal" id="s9">
+      <div class="policy-section-head">
+        <div class="section-num">09</div>
+        <h2>Dispute Resolution</h2>
+      </div>
+      <p>In the event of any dispute related to payments, refunds, or cancellation, both parties agree to attempt to resolve the matter amicably through mutual discussion.</p>
+      <p>If resolution cannot be reached, the matter shall be governed by the applicable laws of India and subject to the jurisdiction of competent courts within India.</p>
+      <div class="policy-highlight">
+        <strong>First Step:</strong> We always encourage open communication. Please reach out to us at <a href="mailto:contact.webroxstudio@gmail.com" style="color:var(--blue)">contact.webroxstudio@gmail.com</a> before escalating any matter.
+      </div>
+    </div>
+
+    <!-- Section 10 -->
+    <div class="policy-section reveal" id="s10">
+      <div class="policy-section-head">
+        <div class="section-num">10</div>
+        <h2>Policy Updates</h2>
+      </div>
+      <p>Webrox Studio reserves the right to modify or update this Refund and Cancellation Policy at any time. Updated versions shall become effective immediately upon publication on the official website.</p>
+    </div>
+
+    <div class="policy-contact reveal">
+      <h3>Have Questions Before Getting Started?</h3>
+      <p>We believe in full transparency. Talk to us about any concerns before signing a contract.</p>
+      <a href="index.html#contact" class="btn-primary">📩 Talk to Us →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">
+        <div class="logo-wrap">
+          <img src="images/logo.jpeg" alt="WebRox Studio Logo" class="logo-img">
+          <div class="logo-text">
+            <h2 style="font-size:20px;">WebRox Studio</h2>
+            <p style="font-size:12px;">Where Ideas Go Digital</p>
+          </div>
+        </div>
+      </a>
+      <p>We build powerful, responsive websites and digital solutions that help businesses grow — from restaurants and clinics to e-commerce brands.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/webroxstudios/" target="_blank" class="social-btn">
+          <img src="images/instagram (1).png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/918799070121" target="_blank" class="social-btn">
+          <img src="images/wp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.linkedin.com/company/webroxstudio/" target="_blank" class="social-btn">
+          <img src="images/linkedin (1).png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Website Development</a></li>
+        <li><a href="index.html#services">App Development</a></li>
+        <li><a href="index.html#services">Digital Marketing</a></li>
+        <li><a href="index.html#services">E-Commerce</a></li>
+        <li><a href="index.html#services">Maintenance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Industries</h4>
+      <ul>
+        <li><a href="index.html#industries">Restaurants</a></li>
+        <li><a href="index.html#industries">Healthcare</a></li>
+        <li><a href="index.html#industries">Retail Shops</a></li>
+        <li><a href="index.html#industries">Gyms &amp; Fitness</a></li>
+        <li><a href="index.html#industries">Real Estate</a></li>
+        <li><a href="index.html#industries">Education</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>WebRox Studio</span>. All rights reserved. Crafted with ❤️ in Vadodara.</p>
+    <p style="font-size:12px;color:var(--gray)">Websites · Apps · Digital Marketing</p>
+  </div>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+  });
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileMenu').classList.add('open');
+  document.getElementById('mobileClose').onclick = closeMobile;
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
