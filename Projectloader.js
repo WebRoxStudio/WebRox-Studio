@@ -1,4 +1,4 @@
-﻿const API_BASE = "https://webroxstudio-backend.onrender.com";
+﻿window.WEBROX_API_BASE = window.WEBROX_API_BASE || "https://webroxstudio-backend.onrender.com";
 
 const FALLBACK_PORTFOLIO = [
   {
@@ -70,7 +70,7 @@ async function loadPortfolio() {
   let data = FALLBACK_PORTFOLIO;
 
   try {
-    const response = await fetch(`${API_BASE}/api/portfolio`);
+    const response = await fetch(`${window.WEBROX_API_BASE}/api/portfolio`);
 
     if (!response.ok) {
       throw new Error(`Portfolio request failed with status ${response.status}`);

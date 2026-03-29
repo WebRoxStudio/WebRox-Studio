@@ -1,4 +1,4 @@
-const API_BASE = "https://webroxstudio-backend.onrender.com";
+window.WEBROX_API_BASE = "https://webroxstudio-backend.onrender.com";
 
  const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.disabled = true;
 
     try {
-      const response = await fetch(`${API_BASE}/api/contact`, {
+      const response = await fetch(`${window.WEBROX_API_BASE}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
