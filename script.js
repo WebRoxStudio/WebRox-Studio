@@ -1,3 +1,9 @@
+const API_BASE =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000"
+    : "https://webroxstudio-backend.onrender.com";
+
  const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
@@ -176,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.disabled = true;
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
