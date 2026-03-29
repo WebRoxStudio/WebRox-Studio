@@ -1,8 +1,4 @@
-const API_BASE =
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1"
-    ? "http://localhost:5000"
-    : "https://webroxstudio-backend.onrender.com";
+const API_BASE = "https://webroxstudio-backend.onrender.com";
 
  const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
