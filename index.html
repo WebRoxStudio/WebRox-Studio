@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-</head>
-
 <body>
 
   <!-- HEADER -->
@@ -44,7 +42,7 @@
         <a href="#contact" class="nav-cta">Get a Quote</a>
       </nav>
 
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" tabindex="0">
         <span></span><span></span><span></span>
       </div>
 
@@ -52,8 +50,8 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">✕</button>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose" type="button" aria-label="Close menu">&times;</button>
     <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#industries" onclick="closeMobile()">Industries</a>
     <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
