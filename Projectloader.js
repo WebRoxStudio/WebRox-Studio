@@ -4,16 +4,44 @@ const API_BASE =
   window.location.hostname === "127.0.0.1"
     ? "http://localhost:5000"
     : "https://webroxstudio-backend.onrender.com";
+const FALLBACK_PORTFOLIO = [
+  {
+    name: "FoundBond",
+    category: "website",
+    badge: "Business Website",
+    url: "https://foundbond.com",
+    description: "Modern business website built with HTML, CSS, and JavaScript.",
+    tech_tags: "HTML,CSS,JavaScript",
+    mock_label: "FOUNDBOND"
+  },
+  {
+    name: "The High Garden",
+    category: "website",
+    badge: "Cafe Website",
+    url: "https://thehighgardencafe.netlify.app/",
+    description: "Client website built for a cafe brand with a clean, modern layout.",
+    tech_tags: "HTML,CSS,JavaScript",
+    mock_label: "THE HIGH GARDEN"
+  }
+];
 
 async function loadPortfolio() {
+
+  let data = FALLBACK_PORTFOLIO;
 
   try {
 
     console.log("Loading portfolio...");
 
     const response = await fetch(`${API_BASE}/api/portfolio`);
+    if (!response.ok) {
+      throw new Error(`Portfolio request failed with status ${response.status}`);
+    }
 
-    const data = await response.json();
+    const apiData = await response.json();
+    if (Array.isArray(apiData) && apiData.length > 0) {
+      data = apiData;
+    }
 
     console.log("API DATA:", data);
 
